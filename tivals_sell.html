@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tivals Sell - Premium HTML Templates & Digital Products</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #667eea; --secondary: #764ba2; --accent: #f093fb; --dark: #1a1a2e; --light: #f5f5f5; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        
+        /* Navigation */
+        nav { background: rgba(0, 0, 0, 0.9); position: sticky; top: 0; z-index: 1000; padding: 1rem 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav ul { list-style: none; display: flex; gap: 2rem; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; align-items: center; }
+        nav a { color: white; text-decoration: none; transition: color 0.3s; font-weight: 500; }
+        nav a:hover { color: var(--accent); }
+        nav .logo { font-size: 1.5rem; font-weight: bold; color: var(--accent); margin-right: auto; }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; padding: 6rem 2rem; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px; animation: float 20s linear infinite; }
+        @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(50px, 50px); } }
+        .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 4rem; margin-bottom: 1rem; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); letter-spacing: -1px; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
+        .hero .subtitle { font-size: 1rem; opacity: 0.8; margin-bottom: 3rem; }
+        
+        /* CTA Buttons */
+        .cta-primary { display: inline-block; background: white; color: var(--primary); padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin: 0.5rem; }
+        .cta-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+        .cta-secondary { display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; border: 2px solid white; transition: all 0.3s; margin: 0.5rem; }
+        .cta-secondary:hover { background: white; color: var(--primary); }
+        
+        /* Products Section */
+        .products { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+        .section-title { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; color: var(--dark); font-weight: 700; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        
+        /* Product Cards */
+        .product-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15); }
+        .product-image { width: 100%; height: 200px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; }
+        .product-content { padding: 2rem; }
+        .product-name { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--dark); font-weight: 700; }
+        .product-price { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; font-weight: bold; }
+        .product-desc { color: #666; margin-bottom: 1.5rem; line-height: 1.7; }
+        .product-features { list-style: none; margin-bottom: 1.5rem; }
+        .product-features li { padding: 0.5rem 0; color: #555; }
+        .product-features li:before { content: '✓ '; color: var(--accent); font-weight: bold; margin-right: 0.5rem; }
+        .product-btn { width: 100%; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border: none; padding: 1rem; border-radius: 8px; font-weight: bold; cursor: pointer; transition: transform 0.3s; font-size: 1rem; }
+        .product-btn:hover { transform: scale(1.02); }
+        
+        /* Features Section */
+        .features { background: white; margin: 4rem 0; padding: 4rem 2rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 2rem auto; }
+        .feature-box { text-align: center; padding: 2rem; }
+        .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .feature-box h3 { margin-bottom: 1rem; color: var(--dark); font-weight: 700; }
+        .feature-box p { color: #666; line-height: 1.7; }
+        
+        /* Testimonials */
+        .testimonials { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .testimonial { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); border-left: 4px solid var(--accent); }
+        .testimonial-text { margin-bottom: 1rem; color: #666; font-style: italic; }
+        .testimonial-author { font-weight: bold; color: var(--primary); }
+        
+        /* CTA Section */
+        .cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center; padding: 4rem 2rem; margin: 4rem 0; border-radius: 15px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .cta-section p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; }
+        
+        /* Footer */
+        footer { background: var(--dark); color: white; text-align: center; padding: 3rem 2rem; margin-top: 4rem; }
+        .footer-links { display: flex; gap: 2rem; justify-content: center; margin-bottom: 1rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--accent); text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 2rem; color: rgba(255,255,255,0.7); }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 1.8rem; }
+            nav ul { flex-direction: column; gap: 1rem; }
+            nav .logo { margin-right: 0; margin-bottom: 1rem; }
+            .product-grid { grid-template-columns: 1fr; }
+            .hero { padding: 4rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li class="logo">⚡ TIVALS SELL</li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>TIVALS SELL</h1>
+            <p class="subtitle">Premium HTML Templates & Web Development Assets</p>
+            <p>Professional, production-ready digital products for developers and designers</p>
+            <div>
+                <a href="#products" class="cta-primary">🛍️ Shop Now</a>
+                <a href="https://gumroad.com" target="_blank" class="cta-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2 class="section-title">Our Products</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">🎨</div>
+                <div class="product-content">
+                    <div class="product-name">Portfolio Template</div>
+                    <div class="product-price">$15</div>
+                    <p class="product-desc">Professional portfolio website template. Fully responsive, modern design.</p>
+                    <ul class="product-features">
+                        <li>Responsive Design</li>
+                        <li>HTML5 & CSS3</li>
+                        <li>Easy Customization</li>
+                        <li>Free Updates</li>
+                    </ul>
+                    <button class="product-btn">Get Now on Gumroad</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">⚡</div>
+                <div class="product-content">
+                    <div class="product-name">Landing Page Kit</div>
+                    <div class="product-price">$20</div>
+                    <p class="product-desc">5 ready-to-use landing page templates. Perfect for startups & projects.</p>
+                    <ul class="product-features">
+                        <li>5 Templates Included</li>
+                        <li>Mobile Optimized</li>
+                        <li>Contact Forms Ready</li>
+                        <li>SEO Friendly</li>
+                    </ul>
+                    <button class="product-btn">Get Now on Gumroad</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">✨</div>
+                <div class="product-content">
+                    <div class="product-name">Component Library</div>
+                    <div class="product-price">$12</div>
+                    <p class="product-desc">Reusable HTML/CSS components. Buttons, cards, forms, and more.</p>
+                    <ul class="product-features">
+                        <li>50+ Components</li>
+                        <li>Copy & Paste Ready</li>
+                        <li>Well Documented</li>
+                        <li>No Dependencies</li>
+                    </ul>
+                    <button class="product-btn">Get Now on Gumroad</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Why Choose TIVALS SELL?</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <div class="feature-icon">🚀</div>
+                <h3>Production Ready</h3>
+                <p>All products are tested and ready to use. No setup required.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Optimized</h3>
+                <p>100% responsive design works perfectly on all devices.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">💻</div>
+                <h3>Clean Code</h3>
+                <p>Well-organized, documented code you'll love to work with.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🎨</div>
+                <h3>Easy Customize</h3>
+                <p>Simple to modify colors, text, and styling to your needs.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🔄</div>
+                <h3>Free Updates</h3>
+                <p>Get lifetime updates and improvements for free.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">📧</div>
+                <h3>Support</h3>
+                <p>Quick support if you have questions or need help.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Customer Reviews</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="testimonial-text">"Amazing templates! Saved me so much time. Highly recommended!"</div>
+                <div class="testimonial-author">- Sarah M., Web Developer</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"Great quality code and fantastic customer support. Worth every penny!"</div>
+                <div class="testimonial-author">- John T., Freelancer</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"Perfect for my startup. Easy to customize and looks professional."</div>
+                <div class="testimonial-author">- Emma L., Founder</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Join hundreds of developers who trust TIVALS SELL for quality web templates</p>
+        <a href="https://gumroad.com" target="_blank" class="cta-primary" style="color: var(--primary);">🛒 Browse All Products</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#products">Products</a>
+            <a href="mailto:tivalsdeveloper@gmail.com">Contact</a>
+            <a href="https://github.com/tivalsdeveloper-oss" target="_blank">GitHub</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TIVALS SELL. All rights reserved. | Made with ❤️ by Tivalsdeveloper</p>
+        </div>
+    </footer>
+</body>
+</html>
